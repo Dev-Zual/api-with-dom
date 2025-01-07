@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,11 +13,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <header>
-      <h1>Get your Favorite Apple Device</h1>
+    <header class="container mx-auto">
+      <h1 class="text-3xl">Get your Favorite Apple Device</h1>
     </header>
-    <main>
-      <section class="phone-container"></section>
+    <main class="container mx-auto mt-7">
+      <section id="phone-container" class="grid grid-cols-3 gap-5"></section>
     </main>
     <script src="./js/main.js"></script>
   </body>
