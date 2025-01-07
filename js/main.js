@@ -90,20 +90,40 @@ const handleDetails = async (id) => {
           <h4 class="text-l font-bold">Brand: ${details.brand}</h4>
           <p class="py-1">Release Date: ${details.releaseDate}</p>
           <h3 class="text-lg font-bold">More Information</h3>
-          <p class=""><span class="font-bold">Chipset</span> : ${details.mainFeatures.chipSet}</p>
-          <p class=""><span class="font-bold">Display Size</span> : ${details.mainFeatures.displaySize}</p>
-          <p class=""><span class="font-bold">Memory</span> : ${details.mainFeatures.memory}</p>
-          <p class=""><span class="font-bold">Storage</span> : ${details.mainFeatures.storage}</p>
+          <p class=""><span class="font-bold">Chipset</span> : ${
+            details.mainFeatures.chipSet
+          }</p>
+          <p class=""><span class="font-bold">Display Size</span> : ${
+            details.mainFeatures.displaySize
+          }</p>
+          <p class=""><span class="font-bold">Memory</span> : ${
+            details.mainFeatures.memory
+          }</p>
+          <p class=""><span class="font-bold">Storage</span> : ${
+            details.mainFeatures.storage
+          }</p>
           <p id="show-sensor" class=""><span class="font-bold">Sensors :</span>
            ${sensorHtml}
           </p>
           <h3 class="text-lg font-bold">Others</h3>
-          <p class=""><span class="font-bold">Bluetooth</span> : ${details.others.Bluetooth}</p>
-          <p class=""><span class="font-bold">GPS</span> : ${details.others.GPS}</p>
-          <p class=""><span class="font-bold">NFC</span> : ${details.others.NFC}</p>
-          <p class=""><span class="font-bold">Radio</span> : ${details.others.Radio}</p>
-          <p class=""><span class="font-bold">USB</span> : ${details.others.USB}</p>
-          <p class=""><span class="font-bold">WLAN</span> : ${details.others.WLAN}</p>
+          <p class=""><span class="font-bold">Bluetooth</span> : ${
+            details.others?.Bluetooth || "N/A"
+          }</p>
+          <p class=""><span class="font-bold">GPS</span> : ${
+            details.others?.GPS || "N/A"
+          }</p>
+          <p class=""><span class="font-bold">NFC</span> : ${
+            details.others?.NFC || "N/A"
+          }</p>
+          <p class=""><span class="font-bold">Radio</span> : ${
+            details.others?.Radio || "N/A"
+          }</p>
+          <p class=""><span class="font-bold">USB</span> : ${
+            details.others?.USB || "N/A"
+          }</p>
+          <p class=""><span class="font-bold">WLAN</span> : ${
+            details.others?.WLAN || "N/A"
+          }</p>
         
           <div class="modal-action">
             <form method="dialog">
