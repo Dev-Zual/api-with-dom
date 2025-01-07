@@ -1,4 +1,4 @@
-const fetchAllData = async (search, isShowAll) => {
+const fetchAllData = async (search = "a", isShowAll) => {
   const res = await fetch(
     `https://openapi.programming-hero.com/api/phones?search=${search}`
   );
@@ -136,3 +136,4 @@ const handleDetails = async (id) => {
   showDetails.appendChild(detailsContainer);
   show_details.showModal();
 };
+fetchAllData();
