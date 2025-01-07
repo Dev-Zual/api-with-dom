@@ -3,12 +3,19 @@ const fetchAllData = async (search, isShowAll) => {
     `https://openapi.programming-hero.com/api/phones?search=${search}`
   );
   const data = await res.json();
+
   displayPhones(data.data, isShowAll);
 };
 
 const displayPhones = (phones, isShowAll) => {
   const phoneContainer = document.getElementById("phone-container");
   phoneContainer.textContent = "";
+  // show if no data
+  if (phones.length === 0) {
+    my_modal_1.showModal();
+    handleLoading(false);
+    return;
+  }
   // show all btn
   const showAllBtn = document.getElementById("show-all");
   if (phones.length > 12 && !isShowAll) {
