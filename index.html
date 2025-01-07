@@ -35,8 +35,15 @@
       </section>
       <section id="phone-container" class="grid grid-cols-3 gap-5"></section>
       <section id="show-all" class="text-center mt-8 hidden mb-5">
-        <button class="btn btn-accent">Search</button>
+        <button onclick="handleShowAll()" class="btn btn-accent">
+          Show All
+        </button>
       </section>
+      <!-- modal  -->
+      <dialog
+        id="show_details"
+        class="modal modal-bottom sm:modal-middle"
+      ></dialog>
     </main>
     <script src="./js/main.js"></script>
   </body>
