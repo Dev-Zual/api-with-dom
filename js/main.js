@@ -70,8 +70,13 @@ const handleDetails = async (id) => {
   const data = await res.json();
   console.log(data.data);
   const details = data.data;
+  const sensors = details?.mainFeatures?.sensors;
+  const sensorHtml = sensors
+    .map((sensor) => `<span>${sensor}</span>`)
+    .join(", ");
   const showDetails = document.getElementById("show_details");
-  showDetails.innerHTML = `
+  const detailsContainer = document.getElementById("details-container");
+  detailsContainer.innerHTML = `
         <div class="modal-box">
         <img src="${details.image}" />
           <h3 class="text-lg font-bold">${details.name}</h3>
@@ -79,9 +84,19 @@ const handleDetails = async (id) => {
           <p class="py-1">Release Date: ${details.releaseDate}</p>
           <h3 class="text-lg font-bold">More Information</h3>
           <p class=""><span class="font-bold">Chipset</span> : ${details.mainFeatures.chipSet}</p>
-          <p class=""><span class="font-bold">Chipset</span> : ${details.mainFeatures.chipSet}</p>
-          <p class=""><span class="font-bold">Chipset</span> : ${details.mainFeatures.chipSet}</p>
-          <p class=""><span class="font-bold">Chipset</span> : ${details.mainFeatures.chipSet}</p>
+          <p class=""><span class="font-bold">Display Size</span> : ${details.mainFeatures.displaySize}</p>
+          <p class=""><span class="font-bold">Memory</span> : ${details.mainFeatures.memory}</p>
+          <p class=""><span class="font-bold">Storage</span> : ${details.mainFeatures.storage}</p>
+          <p id="show-sensor" class=""><span class="font-bold">Sensors :</span>
+           ${sensorHtml}
+          </p>
+          <h3 class="text-lg font-bold">Others</h3>
+          <p class=""><span class="font-bold">Bluetooth</span> : ${details.others.Bluetooth}</p>
+          <p class=""><span class="font-bold">GPS</span> : ${details.others.GPS}</p>
+          <p class=""><span class="font-bold">NFC</span> : ${details.others.NFC}</p>
+          <p class=""><span class="font-bold">Radio</span> : ${details.others.Radio}</p>
+          <p class=""><span class="font-bold">USB</span> : ${details.others.USB}</p>
+          <p class=""><span class="font-bold">WLAN</span> : ${details.others.WLAN}</p>
         
           <div class="modal-action">
             <form method="dialog">
@@ -91,5 +106,6 @@ const handleDetails = async (id) => {
           </div>
         </div>
   `;
+  showDetails.appendChild(detailsContainer);
   show_details.showModal();
 };
