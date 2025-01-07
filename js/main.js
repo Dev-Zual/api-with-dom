@@ -1,6 +1,6 @@
-const fetchAllData = async () => {
+const fetchAllData = async (search) => {
   const res = await fetch(
-    "https://openapi.programming-hero.com/api/phones?search=iphone"
+    `https://openapi.programming-hero.com/api/phones?search=${search}`
   );
   const data = await res.json();
   displayPhones(data.data);
@@ -8,13 +8,14 @@ const fetchAllData = async () => {
 
 const displayPhones = (phones) => {
   const phoneContainer = document.getElementById("phone-container");
+  phoneContainer.textContent = "";
   phones.forEach((phone) => {
     const div = document.createElement("div");
     div.innerHTML = `
             <div class="card bg-base-100  shadow-xl">
   <figure>
     <img
-      src=${phone.image} />
+      src="${phone.image}"/>
   </figure>
   <div class="card-body">
     <h2 class="card-title">${phone.phone_name}</h2>
@@ -29,4 +30,9 @@ const displayPhones = (phones) => {
   });
 };
 
-fetchAllData();
+const handleSearch = () => {
+  const searchInput = document.getElementById("search-input");
+  const searchText = searchInput.value;
+
+  fetchAllData(searchText);
+};

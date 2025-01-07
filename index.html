@@ -17,6 +17,17 @@
       <h1 class="text-3xl">Get your Favorite Apple Device</h1>
     </header>
     <main class="container mx-auto mt-7">
+      <section class="mb-5">
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Search..."
+          class="input input-bordered w-full max-w-xs"
+        />
+        <button onclick="(handleSearch())" class="btn btn-accent">
+          Search
+        </button>
+      </section>
       <section id="phone-container" class="grid grid-cols-3 gap-5"></section>
     </main>
     <script src="./js/main.js"></script>
